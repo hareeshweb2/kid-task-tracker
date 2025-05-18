@@ -1,0 +1,13 @@
+<h2>{{ month }} Progress Report</h2>
+
+<div class="calendar">
+  <div *ngFor="let day of days" class="calendar-day" [class.star]="day.reward" [class.skip]="!day.reward">
+    <div class="date-label">{{ day.date.slice(-2) }}</div>
+    <div class="icon">{{ day.reward ? '⭐' : '❌' }}</div>
+  </div>
+</div>
+
+<div class="summary">
+  <p>⭐ Total Stars: {{ totalStars }}</p>
+  <p>💰 Total Coins: {{ totalCoins }}</p>
+</div>

@@ -1,0 +1,43 @@
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.calendar-day {
+  background: #f0f0f0;
+  padding: 0.6rem;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-day.star {
+  background: #e3fbe3;
+  color: #2e7d32;
+}
+
+.calendar-day.skip {
+  background: #fdeeee;
+  color: #d32f2f;
+}
+
+.date-label {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+.icon {
+  font-size: 1.4rem;
+  margin-top: 0.3rem;
+}
+
+.summary {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+}

@@ -1,0 +1,59 @@
+<div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem;">
+  <img src="https://api.dicebear.com/7.x/thumbs/svg?seed=Vihaan" width="60" height="60" alt="avatar"
+    style="border-radius: 50%;" />
+  <h2 style="margin: 0;">Hi Vihaan 👋</h2>
+</div>
+
+<div style="text-align: center; margin-top: 1rem;">
+  <p style="font-size: 1.2rem;">
+    ⭐ Today: {{ dailyStars }} stars — 💰 {{ dailyStars * 10 }} coins
+  </p>
+  <p style="font-size: 1rem; color: #666;">
+    🗓️ This Week: {{ totalStars }} stars — 💰 {{ totalCoins }} coins
+  </p>
+</div>
+
+
+<p style="text-align: center; margin-top: 1rem; font-weight: bold;">
+  {{ motivationalMessage }}
+</p>
+
+
+<div *ngIf="rewardEarned" style="font-size: 2rem; color: gold; text-align: center;">
+  ⭐ You earned 3 stars today! ⭐
+</div>
+
+<div style="margin-bottom: 1rem;">
+  <label>Select Date: </label>
+  <input type="date" [(ngModel)]="selectedDate" (change)="onDateChange()" />
+</div>
+
+<div *ngFor="let task of tasks; let i = index">
+  <div (click)="toggleTask(i)" style="cursor: pointer;">
+    <strong [style.textDecoration]="task.done ? 'line-through' : 'none'">
+      ✅ {{ task.name }}
+    </strong>
+  </div>
+
+  <ul *ngIf="task.subtasks">
+    <li *ngFor="let sub of task.subtasks; let j = index" (click)="toggleSubtask(i, j)">
+      <span [style.textDecoration]="sub.done ? 'line-through' : 'none'">
+        - {{ sub.done ? '✅' : '⬜️' }} {{ sub.name }}
+      </span>
+    </li>
+  </ul>
+
+  <hr />
+</div>
+
+<h3>📈 Weekly Progress</h3>
+<div style="display: flex; justify-content: space-around;">
+  <div *ngFor="let day of last7Days">
+    <div style="text-align: center;">
+      <div style="font-size: 2rem;">
+        {{ isRewardEarned(day) ? '⭐' : '❌' }}
+      </div>
+      <div style="font-size: 0.8rem;">{{ day.slice(5) }}</div>
+    </div>
+  </div>
+</div>

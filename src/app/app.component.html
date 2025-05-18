@@ -1,0 +1,23 @@
+
+
+<div *ngIf="isParentMode; else kidView">
+  <app-admin-panel></app-admin-panel>
+</div>
+
+<ng-template #kidView>
+  <app-task-list></app-task-list>
+</ng-template>
+
+<hr />
+
+
+<app-monthly-report></app-monthly-report>
+<hr />
+
+
+<div style="text-align: center; margin-top: 1rem;">
+  <button (click)="toggleMode()" style="padding: 0.5rem 1rem; font-size: 1rem;">
+    🔁 Switch to {{ isParentMode ? 'Kid' : 'Parent' }} Mode
+  </button>
+</div>
+
