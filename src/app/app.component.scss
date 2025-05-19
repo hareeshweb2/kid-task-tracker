@@ -1,0 +1,24 @@
+.accordion-header {
+  background: #f0f4ff;
+  padding: 0.8rem 1rem;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-header:hover {
+  background: #dce9ff;
+}
+
+.accordion-content {
+  padding: 1rem;
+  background: #ffffff;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}

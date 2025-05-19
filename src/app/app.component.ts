@@ -13,8 +13,18 @@ import { MonthlyReportComponent } from './components/monthly-report/monthly-repo
 })
 export class AppComponent {
   isParentMode = false;
+  showTasks = true;
+  showWeekly = true;
+  showMonthly = true;
 
   toggleMode() {
     this.isParentMode = !this.isParentMode;
   }
+
+  toggle(section: 'tasks' | 'weekly' | 'monthly'): void {
+    if (section === 'tasks') this.showTasks = !this.showTasks;
+    if (section === 'weekly') this.showWeekly = !this.showWeekly;
+    if (section === 'monthly') this.showMonthly = !this.showMonthly;
+  }
 }
+
